@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'config/themes/theme.dart';
-import 'presentation/views/views_links.dart';
 
 
 class App extends StatelessWidget {

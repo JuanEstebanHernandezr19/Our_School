@@ -1,4 +1,6 @@
+import 'package:Our_School/app/presentation/views/forgot_password/forgot_%20password_view.dart';
 import 'package:Our_School/app/presentation/views/login/Login_Divider.dart';
+import 'package:Our_School/app/presentation/views/register/register_view.dart';
 import 'package:Our_School/app/presentation/widgets/links_common_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -27,7 +29,7 @@ class LoginView extends StatelessWidget {
             children: [
               //Logo
               SvgPicture.asset(
-                'assets/images/MyMarca.svg',
+                'assets/images/Mimarca1.svg',
                 colorFilter: ColorFilter.mode(
                     Theme.of(context).colorScheme.primary, BlendMode.srcIn),
                 alignment: Alignment.topCenter,
@@ -70,7 +72,10 @@ class LoginView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {Navigator.push(
+                        context,MaterialPageRoute(builder: (context) => ForgotPasswordView()
+                        ));
+                      },
                         child: Text(
                           'Forgot Password?',
                           style: TextStyle(
@@ -136,7 +141,10 @@ class LoginView extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(
+                        context,MaterialPageRoute(builder: (context) => RegisterView()
+                        ));
+                      },
                       child: Text(
                         'Sign up',
                         style: TextStyle(

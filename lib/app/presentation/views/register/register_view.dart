@@ -89,6 +89,8 @@ class RegisterView extends StatelessWidget {
 
                 },
               ),
+
+
               const SizedBox(
                 height: 10,
               ),

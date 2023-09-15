@@ -8,7 +8,6 @@ import 'package:Our_School/app/presentation/widgets/links_common_widgets.dart';
 class RegisterView extends StatelessWidget {
   final _emailAddress = TextEditingController();
   final _visiblePassword = TextEditingController();
-  final _datetime = TextEditingController();
   final _name = TextEditingController();
 
   static const String name = 'register_view';
@@ -69,18 +68,7 @@ class RegisterView extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              MyFormTextField(
-                labelText: 'Fecha fecha de nacimiento', 
-                hintText: 'formato AAAA/MM/DD', 
-                textInputType: TextInputType.datetime, 
-                obscureText: false, 
-                suffixIcon: true, 
-                controller: _datetime
-                ),
-  
-              const SizedBox(
-                height: 20,
-              ),
+
               MyButtonForm(
                 text: 'Registrarse',
                 onTab: (){

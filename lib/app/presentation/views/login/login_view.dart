@@ -36,7 +36,7 @@ class LoginView extends StatelessWidget {
                 width: 180,
               ),
               Text(
-                'login',
+                'Inicio de sesión',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                 ),
@@ -46,8 +46,8 @@ class LoginView extends StatelessWidget {
                 height: 20,
               ),
                MyFormTextField(
-                labelText: 'Email',
-                hintText: 'Enter your email',
+                labelText: 'Correo',
+                hintText: 'Introduce tu correo electrónico',
                 textInputType: TextInputType.emailAddress,
                 obscureText: false,
                 suffixIcon: false,
@@ -57,8 +57,8 @@ class LoginView extends StatelessWidget {
                 height: 20,
               ),
               MyFormTextField(
-                  labelText: 'Password',
-                  hintText: 'password',
+                  labelText: 'Contraseña',
+                  hintText: 'Contraseña',
                   textInputType: TextInputType.visiblePassword,
                   obscureText: false,
                   suffixIcon: true,
@@ -77,7 +77,7 @@ class LoginView extends StatelessWidget {
                         ));
                       },
                         child: Text(
-                          'Forgot Password?',
+                          '¿Ha olvidado su contraseña?',
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.primary,
                           ),
@@ -135,7 +135,7 @@ class LoginView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Don\'t have an account?',
+                      '¿No tienes cuenta?',
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.primary,
                       ),

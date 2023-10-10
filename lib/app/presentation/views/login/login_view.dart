@@ -5,6 +5,9 @@ import 'package:Our_School/app/presentation/widgets/links_common_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../interfaces/docente.dart';
+import '../interfaces/estudiante.dart';
+
 class LoginView extends StatelessWidget {
 
   final _emailAddress = TextEditingController();
@@ -93,11 +96,10 @@ class LoginView extends StatelessWidget {
                 height: 20,
               ),
               MyButtonForm(
-                text: 'Login',
-                onTab: (){
-                  print('Email Address: ${_emailAddress.text}');
-                  print('Password: ${_visiblePassword.text}');
-
+                text: 'Sign up',
+                onTab: (){Navigator.push(
+                    context,MaterialPageRoute(builder: (context) => DocentesViews()
+                ));
                 },
               ),
               const SizedBox(
@@ -146,7 +148,7 @@ class LoginView extends StatelessWidget {
                         ));
                       },
                       child: Text(
-                        'Sign up',
+                        'Login',
                         style: TextStyle(
                           color: Theme.of(context).colorScheme.primary,
                         ),

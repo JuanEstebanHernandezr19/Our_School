@@ -1,19 +1,32 @@
 
 import 'package:Our_School/app/presentation/views/login/login_view.dart';
 import 'package:Our_School/app/presentation/views/register/register_Divider.dart';
+import 'package:Our_School/app/presentation/views/register/widgets/my_check_box.dart';
 import 'package:flutter/material.dart';
 import 'package:Our_School/app/presentation/widgets/links_common_widgets.dart';
 
+import '../interfaces/estudiante.dart';
 
-class RegisterView extends StatelessWidget {
-  final _emailAddress = TextEditingController();
-  final _visiblePassword = TextEditingController();
-  final _datetime = TextEditingController();
-  final _name = TextEditingController();
 
+class RegisterView extends StatefulWidget {
   static const String name = 'register_view';
 
    RegisterView({super.key});
+
+  @override
+  State<RegisterView> createState() => _RegisterViewState();
+}
+
+class _RegisterViewState extends State<RegisterView> {
+  final _emailAddress = TextEditingController();
+
+  final _visiblePassword = TextEditingController();
+
+  final _datetime = TextEditingController();
+
+  final _name = TextEditingController();
+
+  bool _checkbox = false;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +38,9 @@ class RegisterView extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [    
+            children: [
               Text(
-                'Llena los campos correspondientes',
+                'Registrar',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                 ),
@@ -37,12 +50,24 @@ class RegisterView extends StatelessWidget {
                 height: 20,
               ),
               MyFormTextField(
-              labelText:'Nombre', 
-              hintText: 'Ingrese su nombre completo', 
-              textInputType: TextInputType.name, 
-              obscureText: false, 
-              suffixIcon: false, 
+              labelText:'Nombre',
+              hintText: 'Ingrese su nombre completo',
+              textInputType: TextInputType.name,
+              obscureText: false,
+              suffixIcon: false,
               controller: _name,
+              ),
+
+              const SizedBox(
+                height: 20,
+              ),
+              MyFormTextField(
+                labelText:'Estudiante/Docente',
+                hintText: 'Como desea ingresar',
+                textInputType: TextInputType.name,
+                obscureText: false,
+                suffixIcon: false,
+                controller: _name,
               ),
               const SizedBox(
                 height: 20,
@@ -70,24 +95,34 @@ class RegisterView extends StatelessWidget {
                 height: 20,
               ),
               MyFormTextField(
-                labelText: 'Fecha fecha de nacimiento', 
-                hintText: 'formato AAAA/MM/DD', 
-                textInputType: TextInputType.datetime, 
-                obscureText: false, 
-                suffixIcon: true, 
+                labelText: 'Fecha fecha de nacimiento',
+                hintText: 'formato AAAA/MM/DD',
+                textInputType: TextInputType.datetime,
+                obscureText: false,
+                suffixIcon: true,
                 controller: _datetime
                 ),
-  
+
               const SizedBox(
                 height: 20,
               ),
+              MyCheckBox(
+                  value: _checkbox,
+                  onChanged: (bool? value){
+                    setState((){
+                      _checkbox = value!;
+                    });
+                  },
+
+              ),
               MyButtonForm(
                 text: 'Registrarse',
-                onTab: (){
-                  print('Email Address: ${_emailAddress.text}');
-                  print('Password: ${_visiblePassword.text}');
-
-                },
+                onTab: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => EstudiantesViews()
+                      ));
+                }
               ),
               const SizedBox(
                 height: 10,

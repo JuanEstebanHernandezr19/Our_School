@@ -6,11 +6,11 @@ const Color _customColor = Color(0xFF027373);
 // Seleccionar los colores de su aplicación NO UTILIZAR LOS COLORES DE EJEMPLO
 const List<Color> _colorTheme=[
   _customColor,
-  Color(0xFF0D8C7F),
-  Color(0xFF65A69F),
+  Color(0xFA0D8C7F),
+  Color(0xD865A69F),
   Color(0xFF9BBFBC),
-  Color(0xFFF0F1F2),
-  Color(0xFF4B64FA),
+  Color(0xFFEFFFFF),
+  Color(0xFF00A3A3),
 ];
 
 class AppTheme{
